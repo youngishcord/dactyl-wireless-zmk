@@ -1,0 +1,2 @@
+config SHIELD_TEST_ZMK
+    def_bool $(shields_list_contains, test_zmk)
