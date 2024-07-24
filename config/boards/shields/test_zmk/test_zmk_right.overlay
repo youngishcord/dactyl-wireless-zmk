@@ -1,5 +1,9 @@
 #include "test_zmk.dtsi"
 
+&default_transform { // The matrix transform for this board is 6 columns over because the left half is 6 columns wide according to the matrix.
+    col-offset = <3>;
+};
+
 &kscan0 {
     col-gpios
         = <&pro_micro 10 GPIO_ACTIVE_HIGH>
