@@ -13,4 +13,33 @@ if SHIELD_TEST_ZMK_LEFT || SHIELD_TEST_ZMK_RIGHT
 config ZMK_SPLIT
     default y
 
+config SPI
+    default y
+
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+config SSD1306_REVERSE_MODE
+    default y
+
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_Z_DPI
+    default 148
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+endif # ZMK_DISPLAY
+
 endif
