@@ -1,2 +1,5 @@
-config SHIELD_TEST_ZMK
-    def_bool $(shields_list_contains, test_zmk)
+config SHIELD_TEST_ZMK_LEFT
+    def_bool $(shields_list_contains,test_zmk_left)
+
+config SHIELD_TEST_ZMK_RIGHT
+    def_bool $(shields_list_contains,test_zmk_right)
