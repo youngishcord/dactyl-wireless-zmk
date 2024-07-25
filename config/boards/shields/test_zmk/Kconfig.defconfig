@@ -6,11 +6,6 @@ if SHIELD_TEST_ZMK_LEFT
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
 
-    if ZMK_DISPLAY
-        config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-            select ZMK_WPM
-    endif # ZMK_DISPLAY
-
 endif
 
 if SHIELD_TEST_ZMK_LEFT || SHIELD_TEST_ZMK_RIGHT
