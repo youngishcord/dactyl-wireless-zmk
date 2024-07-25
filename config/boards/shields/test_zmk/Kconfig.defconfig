@@ -20,24 +20,20 @@ if SHIELD_TEST_ZMK_LEFT || SHIELD_TEST_ZMK_RIGHT
 
     if ZMK_DISPLAY
 
-    config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    config ZMK_DISPLAY
+        select LV_USE_CONT
         select LV_USE_LABEL
         select LV_USE_IMG
-        select LV_USE_CANVAS
-        select LV_USE_ANIMIMG
-        select LV_USE_ANIMATION
-        select LV_USE_LINE
-        select LV_FONT_UNSCII_8
-
-    choice ZMK_DISPLAY_WORK_QUEUE
-        default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
-    endchoice
 
     config I2C
         default y
 
     config SSD1306
         default y
+
+    config SSD1306_REVERSE_MODE
+        bool
+        default n
 
     endif # ZMK_DISPLAY
 
@@ -50,6 +46,7 @@ if SHIELD_TEST_ZMK_LEFT || SHIELD_TEST_ZMK_RIGHT
         default 64
 
     config LV_DPI_DEF
+        int
         default 148
 
     config LV_Z_BITS_PER_PIXEL
