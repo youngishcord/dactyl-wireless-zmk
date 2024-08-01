@@ -3,6 +3,25 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        page_encoder: page_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp PG_UP>, <&kp PG_DN>;
+        };
+        volume_encoder: volume_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
+        };
+        scroll_encoder: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <50>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -20,7 +39,7 @@
     &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp UP DOWN>;
+            sensor-bindings = <&volume_encoder &scroll_encoder>;
         };
     };
 };
