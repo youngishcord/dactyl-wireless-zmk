@@ -34,7 +34,7 @@
     };
 
     keymap {
-        compatible = "zmk,keymap-sensors"
+        compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
@@ -50,7 +50,7 @@
     &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA
             >;
 
-            sensor-bindings = <&volume_encoder &volume_encoder>;
+            sensor-bindings = <&volume_encoder>, <&volume_encoder>;
         };
     };
 };
