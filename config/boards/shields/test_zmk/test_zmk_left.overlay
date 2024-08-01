@@ -8,6 +8,6 @@
         ;
 };
 
-&right_encoder {
+&left_encoder {
     status = "okay";
 };
