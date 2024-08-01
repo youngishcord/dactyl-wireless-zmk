@@ -34,7 +34,7 @@
     };
 
     keymap {
-        compatible = "zmk,keymap";
+        compatible = "zmk,keymap-sensors"
 
         default_layer {
             display-name = "default";
