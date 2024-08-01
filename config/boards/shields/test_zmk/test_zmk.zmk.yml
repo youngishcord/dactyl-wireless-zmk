@@ -8,6 +8,7 @@ exposes: [i2c_oled]
 features:
   - keys
   - display
+  - encoder
 siblings:
   - test_zmk_left
   - test_zmk_right
