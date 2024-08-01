@@ -51,7 +51,7 @@
             >;
 
             sensor-bindings = 
-            <&volume_encoder>, 
+            <&page_encoder>, 
             <&volume_encoder>;
         };
     };
