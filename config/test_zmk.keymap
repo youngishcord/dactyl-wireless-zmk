@@ -50,7 +50,9 @@
     &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA
             >;
 
-            sensor-bindings = <&volume_encoder>, <&volume_encoder>;
+            sensor-bindings = 
+            <&volume_encoder>, 
+            <&volume_encoder>;
         };
     };
 };
