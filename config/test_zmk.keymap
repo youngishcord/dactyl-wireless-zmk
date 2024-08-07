@@ -44,10 +44,12 @@
 // |  SHIFT  |    Z    |    X    |    C    |    V    |    B    | CTRL+A  | CTRL+C  |  |  CTRL+V |  CTRL+X |    N    |    M    |    ,    |    .    |    /    |  R CTRL |
 //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
             bindings = <
-    &kp ESC    &kp Q    &kp W               &kp Y     &kp U     &kp I    
-    &kp TAB    &kp A    &kp S               &kp H     &kp J     &kp K    
-    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA
-    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA
+    &kp Q      &kp W    &kp E    &kp R      &kp T    &kp Y               &kp Y     &kp U     &kp I      &kp ESC    &kp 1    &kp 2
+    &kp A      &kp B    &kp C    &kp D      &kp E    &kp F               &kp H     &kp J     &kp K      &kp TAB    &kp A    &kp S
+    &kp LSHIFT &kp 3    &kp X    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA  &kp LSHIFT &kp Z    &kp X
+    &kp LSHIFT &kp 4    &kp X    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA  &kp LSHIFT &kp Z    &kp X
+    &kp LSHIFT &kp 5    &kp X    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA  &kp LSHIFT &kp Z    &kp X
+                        &kp Q    &kp W      &kp E    &kp X               &kp 5     &kp X     &kp LSHIFT &kp Z    
             >;
 
             sensor-bindings = 
