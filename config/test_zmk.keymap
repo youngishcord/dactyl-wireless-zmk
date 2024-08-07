@@ -53,7 +53,7 @@
             >;
 
             sensor-bindings = 
-            <&scroll_encoder>, 
+            <&page_encoder>, 
             <&volume_encoder>;
         };
     };
