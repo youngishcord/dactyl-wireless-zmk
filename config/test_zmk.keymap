@@ -8,9 +8,17 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 50 // 10
 
+/*
+ * КОДЫ КЛАВИШ: https://zmk.dev/docs/codes 
+ * ДОКУМЕНТАЦИЯ ПО НАСТРОЙКЕ ПОВЕДЕНИЯ КЛВИШ: https://zmk.dev/docs/behaviors
+ * ДОКУМЕНТАЦИЯ ПО ЭМУЛЯЦИИ МЫШИ: https://zmk.dev/docs/behaviors/mouse-emulation
+ * 
+ */
+
+
 &msc {
-    acceleration-exponent = <0>;      // 0
-    time-to-max-speed-ms = <0>;       // 300
+    acceleration-exponent = <10>;      // 0
+    time-to-max-speed-ms = <100>;       // 300
     delay-ms = <0>;                   // 0
 };
 / {
@@ -33,27 +41,43 @@
         };
     };
 
+
+    // ДОКУМЕНТАЦИЯ ПО ПОВЕДЕНИЮ КНОПОК: https://zmk.dev/docs/behaviors
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |   ESC   |    Q    |    W    |    E    |    R    |    T    |                                          |    Y    |    U    |    I    |    O    |    P    |    \    |
-// |   TAB   |    A    |    S    |    D    |    F    |    G    |                                          |    H    |    J    |    K    |    L    |    ;    |    '    |
-// |  SHIFT  |    Z    |    X    |    C    |    V    |    B    | CTRL+A  | CTRL+C  |  |  CTRL+V |  CTRL+X |    N    |    M    |    ,    |    .    |    /    |  R CTRL |
-//                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
+            display-name = "QWERTY";
+/* QWERTY
+ *
+ * ,-----------------------------------------.               ,-----------------------------------------.
+ * |  ESC |   1  |   2  |   3  |   4  |   5  |               |   6  |   7  |   8  |   9  |   0  |   =  |
+ * |------+------+------+------+------|------|               |------+------+------+------+------|------|
+ * |  TAB |   Q  |   W  |   E  |   R  |   T  |               |   Y  |   U  |   I  |   O  |   P  |   ?  |
+ * |------+------+------+------+------|------|               |------+------+------+------+------|------|
+ * | CAPS |   A  |   S  |   D  |   F  |   G  |               |   H  |   J  |   K  |   L  |   ;  |   ?  |
+ * |------+------+------+------+------|------|               |------+------+------+------+------|------|
+ * |LSHIFT|   Z  |   X  |   C  |   V  |   B  |               |   N  |   M  |   ,  |   .  |   /  |   ?  |
+ * |---------------------------==============ǁ               ǁ==============--------------------|------|
+ * | CTRL |   X  |   C  |   V  ǁ   B  |      ǁ<большой палец>ǁ   Z  |   X  ǁ   C  |   V  |   B  |   ?  |
+ * `-------------===============-------------ǁ               ǁ-------------===============-------------'
+ *               ǁ   1  | DEL  | SPACE| TAB  ǁ<---Encoder--->ǁ  ESC  | BS  | ENTER |  4  ǁ	
+ *               "==========================="               "==========================="
+ *                 ^^^^^^^^^^    ^^^^^^^^^^^                   ^^^^^^^^^^    ^^^^^^^^^^^
+ *                 нижний ряд    верхний ряд                   верхний ряд   нижний ряд
+ */
             bindings = <
-    &kp Q      &kp W    &kp E    &kp R      &kp T    &kp Y               &kp Y     &kp U     &kp I      &kp ESC    &kp 1    &kp 2
-    &kp A      &kp B    &kp C    &kp D      &kp E    &kp F               &kp H     &kp J     &kp K      &kp TAB    &kp A    &kp S
-    &kp LSHIFT &kp 3    &kp X    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA  &kp LSHIFT &kp Z    &kp X
-    &kp LSHIFT &kp 4    &kp X    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA  &kp LSHIFT &kp Z    &kp X
-    &kp LSHIFT &kp 5    &kp X    &kp LSHIFT &kp Z    &kp X               &kp N     &kp M     &kp COMMA  &kp LSHIFT &kp Z    &kp X
-                        &kp Q    &kp W      &kp E    &kp X               &kp 5     &kp X     &kp LSHIFT &kp Z    
+    &kp ESC      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5             &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp EQUAL
+    &kp TAB      &kp Q       &kp W       &kp E       &kp R       &kp T              &kp Y       &kp U       &kp I       &kp O       &kp P       &kp S
+    &kp CAPSLOCK &kp A       &kp S       &kp D       &kp F       &kp G              &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp X
+    &kp LSHIFT   &kp Z       &kp X       &kp C       &kp V       &kp B              &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp X
+    &kp LCTRL    &kp 5       &kp X       &kp LSHIFT  &kp Z       &kp X              &kp N       &kp M       &kp COMMA   &kp LSHIFT  &kp Z       &kp X
+                             &kp Q       &kp W       &kp E       &kp X              &kp 5       &kp X       &kp LSHIFT  &kp Z
             >;
-
+            
+            // ТУТ УКАЗЫВАЕТСЯ НАЗНАЧЕНИЕ ЭНКОДЕРА В СЛОЕ
             sensor-bindings = 
-            <&page_encoder>, 
+            <&scroll_encoder>, 
             <&volume_encoder>;
         };
     };
