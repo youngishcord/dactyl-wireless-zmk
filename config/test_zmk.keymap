@@ -59,9 +59,9 @@
  * |------+------+------+------+------|------|               |------+------+------+------+------|------|
  * |LSHIFT|   Z  |   X  |   C  |   V  |   B  |               |   N  |   M  |   ,  |   .  |   /  |   ?  |
  * |---------------------------==============ǁ               ǁ==============--------------------|------|
- * | CTRL |   X  |   C  |   V  ǁ   B  |      ǁ<большой палец>ǁ   Z  |   X  ǁ   C  |   V  |   B  |   ?  |
+ * | CTRL |  ALT |   ?  |   ?  ǁ   ?  |   ?  ǁ<большой палец>ǁ BSPC | SPACEǁ   ?  |   ?  |   ?  |   ?  |
  * `-------------===============-------------ǁ               ǁ-------------===============-------------'
- *               ǁ   1  | DEL  | SPACE| TAB  ǁ<---Encoder--->ǁ  ESC  | BS  | ENTER |  4  ǁ	
+ *               ǁ   ?  |   ?  |   ?  |   ?  ǁ<---Encoder--->ǁ   ?  |   ?  |   ?  |   ?  ǁ	
  *               "==========================="               "==========================="
  *                 ^^^^^^^^^^    ^^^^^^^^^^^                   ^^^^^^^^^^    ^^^^^^^^^^^
  *                 нижний ряд    верхний ряд                   верхний ряд   нижний ряд
@@ -71,7 +71,7 @@
     &kp TAB      &kp Q       &kp W       &kp E       &kp R       &kp T              &kp Y       &kp U       &kp I       &kp O       &kp P       &kp S
     &kp CAPSLOCK &kp A       &kp S       &kp D       &kp F       &kp G              &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp X
     &kp LSHIFT   &kp Z       &kp X       &kp C       &kp V       &kp B              &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp X
-    &kp LCTRL    &kp 5       &kp X       &kp LSHIFT  &kp Z       &kp X              &kp N       &kp M       &kp COMMA   &kp LSHIFT  &kp Z       &kp X
+    &kp LCTRL    &kp LALT    &kp X       &kp LSHIFT  &kp Z       &kp X              &kp BSPC    &kp SPACE   &kp COMMA   &kp LSHIFT  &kp Z       &kp X
                              &kp Q       &kp W       &kp E       &kp X              &kp 5       &kp X       &kp LSHIFT  &kp Z
             >;
             
