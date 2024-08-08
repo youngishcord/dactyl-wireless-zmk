@@ -17,8 +17,8 @@
 
 
 &msc {
-    acceleration-exponent = <10>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
+    acceleration-exponent = <0>;      // 0
+    time-to-max-speed-ms = <0>;       // 300
     delay-ms = <0>;                   // 0
 };
 / {
@@ -69,9 +69,9 @@
             bindings = <
     &kp ESC      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5             &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp EQUAL
     &kp TAB      &kp Q       &kp W       &kp E       &kp R       &kp T              &kp Y       &kp U       &kp I       &kp O       &kp P       &kp S
-    &kp CAPSLOCK &kp A       &kp S       &kp D       &kp F       &kp G              &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp X
+    &kp CAPSLOCK &kp A       &kp S       &kp D       &kp F       &kp G              &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp ENTER
     &kp LSHIFT   &kp Z       &kp X       &kp C       &kp V       &kp B              &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp X
-    &kp LCTRL    &kp LALT    &kp X       &kp LSHIFT  &kp Z       &kp X              &kp BSPC    &kp SPACE   &kp COMMA   &kp LSHIFT  &kp Z       &kp X
+    &kp LCTRL    &kp LALT    &kp X       &kp LSHIFT  &kp Z       &kp X              &kp BSPC    &kp SPACE   &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT
                              &kp Q       &kp W       &kp E       &kp X              &kp 5       &kp X       &kp LSHIFT  &kp Z
             >;
             
