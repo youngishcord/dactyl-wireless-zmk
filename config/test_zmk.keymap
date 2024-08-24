@@ -8,11 +8,14 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 50 // 10
 
+#define QWERTY 0
+#define NUM 1
+
 /*
  * КОДЫ КЛАВИШ: https://zmk.dev/docs/codes 
  * ДОКУМЕНТАЦИЯ ПО НАСТРОЙКЕ ПОВЕДЕНИЯ КЛВИШ: https://zmk.dev/docs/behaviors
  * ДОКУМЕНТАЦИЯ ПО ЭМУЛЯЦИИ МЫШИ: https://zmk.dev/docs/behaviors/mouse-emulation
- * 
+ * НАСТРОЙКА ПОВЕДЕНИЯ СЛОЕВ: https://zmk.dev/docs/keymaps/behaviors/layers
  */
 
 
@@ -46,7 +49,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        QWERTY {
             display-name = "QWERTY";
 /* QWERTY
  *
@@ -61,18 +64,53 @@
  * |---------------------------==============ǁ               ǁ==============--------------------|------|
  * | CTRL |  ALT |   ?  |   ?  ǁ   ?  |   ?  ǁ<большой палец>ǁ BSPC | SPACEǁ   ?  |   ?  |   ?  |   ?  |
  * `-------------===============-------------ǁ               ǁ-------------===============-------------'
+ *               ǁ   ?  |   ?  |   ?  |  NUM ǁ<---Encoder--->ǁ   ?  |   ?  |   ?  |   ?  ǁ	
+ *               "==========================="               "==========================="
+ *                 ^^^^^^^^^^    ^^^^^^^^^^^                   ^^^^^^^^^^    ^^^^^^^^^^^
+ *                 нижний ряд    верхний ряд                   верхний ряд   нижний ряд
+ */
+            bindings = <
+    &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp EQUAL
+    &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &none
+    &kp CAPSLOCK &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp SEMI     &kp ENTER
+    &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &none
+    &kp LCTRL    &kp LALT     &none        &none        &none        &none              &kp BSPC     &kp SPACE    &none        &none        &none        &none 
+                              &none        &none        &none        &mo NUM         &none        &none        &none        &none
+            >;
+            
+            // ТУТ УКАЗЫВАЕТСЯ НАЗНАЧЕНИЕ ЭНКОДЕРА В СЛОЕ
+            sensor-bindings = 
+            <&scroll_encoder>, 
+            <&volume_encoder>;
+        };
+
+        NUM {
+            display-name = "NUMPAD";
+/* QWERTY
+ *
+ * ,-----------------------------------------.               ,-----------------------------------------.
+ * |   ?  |   ?  |   ?  |   ?  |   ?  |   ?  |               |   ?  |   ?  |   ?  |   ?  |   ?  |   ?  |
+ * |------+------+------+------+------|------|               |------+------+------+------+------|------|
+ * |   ?  |   ?  |   ?  |   ?  |   ?  |   ?  |               |   ?  |   7  |   8  |   9  |   ?  |   ?  |
+ * |------+------+------+------+------|------|               |------+------+------+------+------|------|
+ * |   ?  |   ?  |   ?  |   ?  |   ?  |   ?  |               |   ?  |   4  |   5  |   6  |   ?  |   ?  |
+ * |------+------+------+------+------|------|               |------+------+------+------+------|------|
+ * |   ?  |   ?  |   ?  |   ?  |   ?  |   ?  |               |   ?  |   1  |   2  |   3  |   ?  |   ?  |
+ * |---------------------------==============ǁ               ǁ==============--------------------|------|
+ * |   ?  |   ?  |   ?  |   ?  ǁ   ?  |   ?  ǁ<большой палец>ǁ   ?  |   ?  ǁ   0  |   ?  |   ?  |   ?  |
+ * `-------------===============-------------ǁ               ǁ-------------===============-------------'
  *               ǁ   ?  |   ?  |   ?  |   ?  ǁ<---Encoder--->ǁ   ?  |   ?  |   ?  |   ?  ǁ	
  *               "==========================="               "==========================="
  *                 ^^^^^^^^^^    ^^^^^^^^^^^                   ^^^^^^^^^^    ^^^^^^^^^^^
  *                 нижний ряд    верхний ряд                   верхний ряд   нижний ряд
  */
             bindings = <
-    &kp ESC      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5             &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp EQUAL
-    &kp TAB      &kp Q       &kp W       &kp E       &kp R       &kp T              &kp Y       &kp U       &kp I       &kp O       &kp P       &kp S
-    &kp CAPSLOCK &kp A       &kp S       &kp D       &kp F       &kp G              &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp ENTER
-    &kp LSHIFT   &kp Z       &kp X       &kp C       &kp V       &kp B              &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp X
-    &kp LCTRL    &kp LALT    &kp X       &kp LSHIFT  &kp Z       &kp X              &kp BSPC    &kp SPACE   &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT
-                             &kp Q       &kp W       &kp E       &kp X              &kp 5       &kp X       &kp LSHIFT  &kp Z
+    &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none        &none
+    &none        &none        &none        &none        &none        &none              &none        &kp N7       &kp N8       &kp N9       &none
+    &none        &none        &none        &none        &none        &none              &none        &kp N4       &kp N5       &kp N6       &none        &none
+    &none        &none        &none        &none        &none        &none              &none        &kp N1       &kp N2       &kp N3       &none        &none
+    &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none        &none
+                              &none        &none        &none        &none              &none        &none        &none        &none        
             >;
             
             // ТУТ УКАЗЫВАЕТСЯ НАЗНАЧЕНИЕ ЭНКОДЕРА В СЛОЕ
