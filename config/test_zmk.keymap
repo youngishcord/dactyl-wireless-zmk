@@ -75,7 +75,7 @@
     &kp CAPSLOCK &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp SEMI     &kp ENTER
     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &none
     &kp LCTRL    &kp LALT     &none        &none        &none        &none              &kp BSPC     &kp SPACE    &none        &none        &none        &none 
-                              &none        &mo NUM      &none        &mo NUM            &none        &none        &none        &none
+                              &tog NUM     &mo NUM      &none        &mo NUM            &none        &none        &none        &none
             >;
             
             // ТУТ УКАЗЫВАЕТСЯ НАЗНАЧЕНИЕ ЭНКОДЕРА В СЛОЕ
@@ -110,7 +110,7 @@
     &none        &none        &none        &none        &none        &none              &none        &kp N4       &kp N5       &kp N6       &none        &none
     &none        &none        &none        &none        &none        &none              &none        &kp N1       &kp N2       &kp N3       &none        &none
     &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none        &none
-                              &none        &trans       &none        &trans             &none        &none        &none        &none        
+                              &trans       &trans       &none        &none              &none        &none        &none        &none        
             >;
             
             // ТУТ УКАЗЫВАЕТСЯ НАЗНАЧЕНИЕ ЭНКОДЕРА В СЛОЕ
