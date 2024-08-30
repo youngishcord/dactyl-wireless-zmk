@@ -9,7 +9,7 @@
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 50 // 10
 
 #define QWERTY 0
-#define MOVE 1
+#define EXTRA 1
 #define NUM 2
 
 /*
@@ -75,7 +75,7 @@
     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp BSPC
     &kp CAPSLOCK &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp SEMI     &kp ENTER
     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &none
-    &kp LCTRL    &kp LALT     &nope        &none        &kp SPACE    &mo MOVE           &kp BSPC     &kp SPACE    &none        &none        &none        &kp ENTER 
+    &kp LCTRL    &kp LALT     &nope        &none        &kp SPACE    &mo EXTRA            &kp BSPC     &kp SPACE    &none        &none        &none        &kp ENTER 
                               &tog NUM     &mo NUM      &none        &mo NUM            &kp BSPC     &none        &none        &none
             >;
             
@@ -85,9 +85,9 @@
             <&volume_encoder>;
         };
 
-        MOVE {
-            display-name = "QWERTY";
-/* MOVE 
+        EXTRA {
+            display-name = "EXTRA";
+/* EXTRA 
  *
  * ,-----------------------------------------------.               ,-----------------------------------------------.
  * |  ESC  |   1   |   2   |   3   |   4   |   5   |               |   6   |   7   |   8   |   9   |   0   |   =   |
