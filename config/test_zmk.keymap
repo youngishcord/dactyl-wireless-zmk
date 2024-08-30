@@ -111,7 +111,7 @@
     &none        &none        &none        &none        &none        &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp SEMI     &none
     &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none        &none
     &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none        &kp ENTER 
-                              &none        &none        &none        &none              &none        &none        &none        &none
+                              &trans       &trans       &none        &none              &none        &none        &none        &none
             >;
             
             // ТУТ УКАЗЫВАЕТСЯ НАЗНАЧЕНИЕ ЭНКОДЕРА В СЛОЕ
