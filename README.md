@@ -21,7 +21,7 @@ Since it was difficult to calculate the size of the hole for the usb and for the
 
 523450 1000mAh rechargeable batteries are used to provide the board.
 
-![battery](data/images/photo4.png)
+![battery](data/images/Photo4.png)
 
 ## Soldering
 
