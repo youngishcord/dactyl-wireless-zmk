@@ -1,6 +1,6 @@
 # Dactyl custom split wireless keyboard
 
-![base view](data/images/Photo1.png)
+![base view](data/images/Photo0.png)
 
 My custom wireless keyboard without using printed circuit boards. All soldering is done by canopy using wires and diodes. The microcontroller uses an analog of nice!nano, [(NRF52840)(Pro Micro)](https://aliexpress.ru/item/1005006035267231.html?spm=a2g2w.orderdetail.0.0.4cc84aa62AqC6x&sku_id=12000035421753155).
 
